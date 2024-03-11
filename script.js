@@ -29,19 +29,10 @@ const tableBody = document.querySelector("tbody");
 let groupedData = {};
 let uniqueGroup = [];
 
-/*
-let uniqueGroup = data.filter(item => {
-  const year = new Date(item.full_date).getFullYear();
-//return data.every(obj => obj === item | new Date(obj.full_date).getFullYear() !== year);
-  return data.filter(obj => new Date(obj.full_date).getFullYear() === year).length === 1;
-  // I need the return to give me the items whose year !== other years 
-});
-*/
-
 console.log("unique group", uniqueGroup);
 
 data.forEach((item) => {
-  const year = new Date(item.date).getFullYear(); //
+  const year = new Date(item.date).getFullYear(); 
   const person = {
     date: item.date,
     firstName: item.firstName,
@@ -51,7 +42,7 @@ data.forEach((item) => {
   if (!groupedData[year]) {
     groupedData[year] = []; // ! for negative
   }
-  groupedData[year].push(person); // I need to get back to this part. Does push just add to array?
+  groupedData[year].push(person);
 });
 
 Object.keys(groupedData).forEach((year) => {
@@ -108,54 +99,4 @@ for (const year in groupedData) {
     chevron.classList.toggle("bi-chevron-down");
     chevron.classList.toggle("bi-chevron-up");
   }
-
-  /*
-  const dateCell = document.createElement("td");
-  dateCell.textContent = groupedData[year][0].date;
-  row.appendChild(dateCell);
-
-  const firstNameCell = document.createElement("td");
-  firstNameCell.textContent = groupedData[year][0].firstName;
-  row.appendChild(firstNameCell);
-
-  const lastNameCell = document.createElement("td");
-  lastNameCell.textContent = groupedData[year][0].lastName;
-  row.appendChild(lastNameCell);
-
-  tableBody.appendChild(row);
-
-  // 4 this section loops through remaining people in the year and creates separate rows
-  for (let i = 1; i < groupedData[year].length; i++) {
-    const person = groupedData[year][i];
-    //i = 1 so that we skip the 0 index
-    const row = document.createElement("tr");
-    row.classList.add("collapse");
-    row.setAttribute("id", `collapse${year}`); // these 3 lines helped hid my empty row lines
-
-    const date1Cell = document.createElement("td");
-    date1Cell.textContent = "";
-    row.appendChild(date1Cell);
-
-    const dateCell = document.createElement("td");
-    dateCell.textContent = person.date;
-    dateCell.classList.add("collapse");
-    dateCell.setAttribute("id", `collapse${year}`);
-    row.appendChild(dateCell);
-
-    const firstNameCell = document.createElement("td");
-    firstNameCell.textContent = person.firstName;
-    firstNameCell.classList.add("collapse");
-    firstNameCell.setAttribute("id", `collapse${year}`);
-    row.appendChild(firstNameCell);
-
-    const lastNameCell = document.createElement("td");
-    lastNameCell.textContent = person.lastName;
-    lastNameCell.classList.add("collapse");
-    lastNameCell.setAttribute("id", `collapse${year}`);
-    row.appendChild(lastNameCell);
-
-    tableBody.appendChild(row);
-    
-  }
-*/
 }

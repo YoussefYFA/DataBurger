@@ -66,7 +66,7 @@ for (const year in groupedData) {
   
   html += `
   <tr class="table-rowA">
-    <td class="btn btn-link" data-bs-toggle="collapse" data-bs-target="[id^='content${year}']" onclick="toggleChevron(this)">
+    <td class="btn btn-link" data-bs-toggle="collapse" data-bs-target="[id^='content${year}']"  onclick="toggleChevron(this)">
     ${yearCellContent}  <i class="bi bi-chevron-down chevron"></i></td>
   </tr>
 

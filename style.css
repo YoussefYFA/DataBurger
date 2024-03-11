@@ -1,11 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans&display=swap');
+
 body {
 background-color: red;
 color: black !important;
+align-items: center;
 }
 
-.tableAA {
-  width: 500px;
-  margin: 0 auto;
+.titleA {
+  font-family: 'Google Sans', sans-serif !important;
+  margin: 10px;
+}
+
+.tableX {
+  width: 500px !important;
 }
 
 .collapsing {

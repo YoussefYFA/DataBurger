@@ -1,0 +1,36 @@
+body {
+background-color: red;
+color: black !important;
+}
+
+.tableAA {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.collapsing {
+  transition-duration: 0s !important;
+}
+
+
+.chevron {
+    transition: transform 2s !important;
+  }
+
+
+.bi-chevron-up {
+  color: red;
+  transform: rotate(180deg) !important;
+  transition: transform 2s !important;
+  }
+
+.bi-chevron-down {
+  color: green;
+    transform: rotate(180deg) !important;
+    transition: transform 2s !important;
+  }
+
+  .table-rowA {
+    cursor: pointer;
+    color: blue;
+  }

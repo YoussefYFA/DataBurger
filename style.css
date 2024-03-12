@@ -1,43 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans&display=swap");
 
 body {
-background-color: red;
-color: black !important;
-align-items: center;
+  background-color: #fdc555;
+  color: black !important;
+  align-items: center;
+}
+
+.title {
+  font-family: Playfair Display, serif !important;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.container {
+  display: grid;
+  place-items: center; /* Combines both centering methods */
+  height: 85vh; /* Optional: Set container height for vertical centering */
 }
 
 .titleA {
-  font-family: 'Google Sans', sans-serif !important;
+  font-family: "Google Sans", sans-serif !important;
   margin: 10px;
 }
 
+.table {
+  /* border-radius: 20px; */
+  background-color: white;
+}
 .tableX {
   width: 500px !important;
+  border: 1px black ;
+
 }
 
 .collapsing {
   transition-duration: 0s !important;
 }
 
-
 .chevron {
-    transition: transform 2s !important;
-  }
-
+  transition: transform 2s !important;
+}
 
 .bi-chevron-up {
   color: red;
   transform: rotate(180deg) !important;
   transition: transform 2s !important;
-  }
+}
 
 .bi-chevron-down {
   color: green;
-    transform: rotate(180deg) !important;
-    transition: transform 2s !important;
-  }
+  transform: rotate(180deg) !important;
+  transition: transform 2s !important;
+}
 
-  .table-rowA {
-    cursor: pointer;
-    color: blue;
-  }
+.table-rowA {
+  cursor: pointer;
+  color: blue;
+}

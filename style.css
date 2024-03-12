@@ -6,31 +6,32 @@ body {
   align-items: center;
 }
 
-.title {
+
+.container {
+  display: grid;
+  place-items: center;
+  height: 85vh;
+}
+
+.table-container {
+border: 20px black !important;
+}
+
+.titleX {
   font-family: Playfair Display, serif !important;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
-}
-
-.container {
-  display: grid;
-  place-items: center; /* Combines both centering methods */
-  height: 85vh; /* Optional: Set container height for vertical centering */
-}
-
-.titleA {
-  font-family: "Google Sans", sans-serif !important;
-  margin: 10px;
+  color: #F07837;
 }
 
 .table {
-  /* border-radius: 20px; */
+  border-radius: 20px; 
   background-color: white;
 }
 .tableX {
   width: 500px !important;
-  border: 1px black ;
+  border: 20px black ;
 
 }
 

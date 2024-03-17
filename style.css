@@ -1,61 +1,284 @@
 @import url("https://fonts.googleapis.com/css2?family=Google+Sans&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+  font-family: "Google Sans", sans-serif;
+}
+
+@media print {
+.table, .table__body {
+overflow: visible;
+height: auto !important;
+width: auto !important;
+}
+} 
+
+@page {
+  size: landscape;
+  margin: 0; 
+}
+
 body {
-  background-color: #fdc555;
-  color: black !important;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; 
+  /* horizontal center everything*/
   align-items: center;
+  /* vertical center everything*/
+  
+
+  background-color: #fdc555;
+  /* background-color: #8C2B32 */
+  
 }
 
+main.table {
+  width: 82vw;
+  height: 90vh;
+  background-color: rgba(255, 255, 255, 0.3);
+  /* can remove this to get flat color back */
+  backdrop-filter: blur(7px);
+  box-shadow: 0 .4rem .8rem #0005;
+  border-radius: .8rem ;
 
-.container {
-  display: grid;
-  place-items: center;
-  height: 85vh;
+  overflow: hidden;
+  }
+  
+ 
+
+  th, td {
+    text-align: center;
+    align-content: center;
+  }
+
+
+table, th, td {
+
+  padding: 1rem;
 }
 
-.table-container {
-border: 20px black !important;
+.table-header {
+  width: 100%;
+  height: 10%;
+  background-color: rgba(255, 255, 255, 0.7);
+  /* background-color: white; */
+  padding: .8rem 1rem;
+  padding-top: .2rem;
+  padding-left: 2.7%;
+  border-radius: .8rem .8rem 0rem 0rem;
 }
 
-.titleX {
+.my-title {
   font-family: Playfair Display, serif !important;
+  /* font-size: 1.8rem; */
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
-  color: #F07837;
+  color: #f05c37;
 }
 
-.table {
-  /* border-radius: 20px;  */
+.table-body {
+  width: 95%;
+  max-height: calc(82.5% - 1.6rem);
+  background-color: rgba(255, 255, 255, 0.5);
+  
+  margin: 0rem auto;
+  border-radius: .6rem;
+
+  overflow: scroll;
+  overflow: overlay;
+  scrollbar-gutter: ignore;
+  
+}
+
+tbody {
+  border-bottom: none;
+}
+
+.table-body::-webkit-scrollbar{
+  width: 0.5rem;
+  height: 0.5rem;
+  visibility: hidden;
+}
+
+.table-body:hover::-webkit-scrollbar{
+  visibility: visible;
+}
+
+.table-body::-webkit-scrollbar-thumb{
+  border-radius: 0.5rem;
+  background-color: #0004;
+  visibility: hidden;
+}
+
+.table-body:hover::-webkit-scrollbar-thumb{
+  visibility: visible;
+}
+
+.input-group {
+  width: 95%;
+  height: 5.9%;
+  background-color: #fff5;
+  padding: 0 .6rem;
+  border-radius: 2rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  transition: .2s;
+
+  margin: .6rem auto;
+  overflow: visible;
+}
+
+.input-group:hover {
+  /* width: 100%; */
+  background-color: #fff8;
+  box-shadow: 0 .1rem .4rem #0002;
+}
+
+.input-group:focus-within {
   background-color: white;
+  box-shadow: 0 .1rem .4rem #0002;
 }
-.tableX {
-  width: 500px !important;
-  border: 20px black ;
+
+.input-group i {
+  float: right;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0 .5rem 0 .3rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  text-align: left;
+}
+
+
+.form-check {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center !important;
+  text-align: center !important;
 
 }
+
+table {
+  width: 100%;
+  border: 0px ;
+}
+
+thead {
+  border: none !important;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: rgb(238, 238, 238);
+}
+
+
+tbody tr:nth-child(even) {
+  background-color: #0000000b;
+}
+
+tbody tr:hover {
+  background-color: rgb(253, 197, 85, .5);
+}
+
+tbody tr {
+  --delay: .1s;
+  transition: .5s ease-in-out var(--delay), background-color 0s;
+}
+
+tbody tr.hide {
+  /* opacity: 0; */
+  transform: translateX(40%);
+  background-color: red;
+  height: 1px;
+  display: none;
+  
+}
+
+tbody tr td,
+tbody tr td p {
+    transition: .2s ease-in-out;
+}
+
+tbody tr.hide td,
+tbody tr.hide td i,
+tbody tr.hide td p,
+tbody tr.hide td div,
+tbody tr.hide td div input {
+    padding: 0;
+    margin: 0px;
+    border: none;
+    width: 0px;
+    height: 0px;
+    font: 0px / 0px sans-serif;
+    transition: .8s ease-in-out .5s;
+}
+
+
+.year-button p {
+  color: rgb(119, 230, 138, .75);
+  padding-left: 20px;
+  /* background-color: white; */
+}
+
+.form-check-input:checked {
+  background-color: rgba(92, 184, 107, 0.75);
+  border-color: rgb(119, 230, 138, .75);
+}
+
+.form-check-input:focus {
+  border-color: rgb(119, 230, 138, .75);
+  box-shadow: 0 0 0 0.25rem rgb(119, 230, 138, .75);
+}
+
+.highlighted-Row {
+  background-color: rgb(119, 230, 138, .75)  !important;
+}
+
+/* ------ */
 
 .collapsing {
   transition-duration: 0s !important;
 }
-
 .chevron {
   transition: transform 2s !important;
 }
-
 .bi-chevron-up {
-  color: red;
+  color: #f05c37;
   transform: rotate(180deg) !important;
   transition: transform 2s !important;
 }
-
 .bi-chevron-down {
-  color: green;
+  color: rgba(92, 184, 107);
   transform: rotate(180deg) !important;
   transition: transform 2s !important;
 }
 
-.table-rowA {
+.yearRow {
   cursor: pointer;
+  color: rgb(41, 41, 41);
+}
+
+.row {
+  transition: opacity 1s ease;
+}
+
+.blue {
+  background-color: blue;
   color: blue;
 }
